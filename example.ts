@@ -30,7 +30,7 @@ async function makeApiCall(
   sessionId?: string,
 ) {
   const headers: Record<string, string> = {
-    'Authorization': getApiKey(),
+    'Authorization': `ApiKey ${getApiKey()}`,
     'Content-Type': 'application/json',
   };
 
@@ -47,11 +47,6 @@ async function makeApiCall(
     options.body = JSON.stringify(body);
   }
 
-  console.log(`Making API call:
-  URL: ${API_BASE_URL}${endpoint}
-  Method: ${method}
-  Headers: ${JSON.stringify({ ...headers, 'Authorization': '[REDACTED]' })}
-  Body: ${options.body || 'N/A'}`);
 
   const response = await fetch(`${API_BASE_URL}${endpoint}`, options);
 
