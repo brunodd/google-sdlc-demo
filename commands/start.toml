@@ -1,0 +1,7 @@
+description = "Start a new game session"
+
+[arguments]
+level_id = { type = "string", required = true, description = "The ID of the level to start" }
+
+[tool.startGame]
+level_id = "{{level_id}}"

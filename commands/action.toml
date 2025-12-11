@@ -1,0 +1,13 @@
+description = "Perform an in-game action"
+
+[arguments]
+session_id = { type = "string", required = true, description = "The current game session ID" }
+action = { type = "string", required = true, description = "The action to perform (move, take, drop, use, examine, look, inventory)" }
+target = { type = "string", required = false, description = "The target of the action (e.g., item name, exit name)" }
+indirect_target = { type = "string", required = false, description = "The second target for 'use' action (optional)" }
+
+[tool.performAction]
+session_id = "{{session_id}}"
+action = "{{action}}"
+target = "{{target}}"
+indirect_target = "{{indirect_target}}"
