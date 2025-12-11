@@ -1,1 +1,3 @@
 steps-done.txt
+node_modules/
+dist/
